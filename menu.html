@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="history.html">História</a></li>
+            <li><a href="camp.html">Campeonato</a></li>
+            <li><a href="rules.html">Regulamento</a></li>
+            <li><a href="about.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Função para carregar o menu
+        function loadMenu() {
+            fetch('C:/Users/PC/Documents/ASBOJAC/menu.html') // Caminho para o arquivo menu.html
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('menu').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+    
+        // Carregar o menu ao iniciar a página
+        window.onload = loadMenu;
+    </script>

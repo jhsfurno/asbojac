@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<title> ASBOJAC </title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site de Bocha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>ASBOJAC - Associação de Bocha de Jardim Camburi</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li><a href="Index.html">Inicio</a></li>
+            <li><a href="history.html">História</a></li>
+            <li><a href="camp.html">Campeonato</a></li>
+            <li><a href="rules.html">Regulamento</a></li>
+            <li><a href="about.html">Sobre</a></li>
+        </ul>
+    </nav>
+
+    <div id="menu"></div>
+
+    <main>
+        <section class="section-highlight">
+            <h2>Bem-vindo a ASBOJAC - Associação de Bocha Jardim Camburi!</h2>
+            <p>Informações sobre nossa história, torneios, regras e muito mais.</p>
+        </section>
+
+        <div class="slider">
+            <div class="slides">
+                <!-- Imagem 1 -->
+                <div class="slide slice">
+                    <img src="pictures/imagem1.jpeg" alt="Imagem 1">
+                </div>
+                <!-- Imagem 2 -->
+                <div class="slide slice">
+                    <img src="pictures/imagem2.jpeg" alt="Imagem 2">
+                </div>
+                <!-- Imagem 3 -->
+                <div class="slide slice">
+                    <img src="pictures/imagem3.jpeg" alt="Imagem 3">
+                </div>
+            </div>
+            <!-- Botões de navegação -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            <button class="prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="next"><i class="fas fa-chevron-right"></i></button>
+
+        </div>
+
+        <div class="thumbnails">
+            <img src="pictures/imagem1.jpeg" alt="Imagem 1" data-index="1">
+            <img src="pictures/imagem2.jpeg" alt="Imagem 2" data-index="2">
+            <img src="pictures/imagem3.jpeg" alt="Imagem 3" data-index="3">
+            <!-- Adicione mais miniaturas conforme necessário -->
+        </div>
+        
+        <!-- Seção do Mapa -->
+        <section>
+            <h2>Localização</h2>
+            <div class="map-container">
+            <!-- Código do Google Maps -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3743.039218228983!2d-40.2682658!3d-20.2572082!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb819ac8445ef6f%3A0x82411970add18f35!2sPra%C3%A7a%20Da%20Bocha!5e0!3m2!1spt-BR!2sbr!4v1723571136337!5m2!1spt-BR!2sbr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ASBOJAC. Todos os direitos reservados.</p>
+    </footer>    
+<!-- **********************************Códigos em Javascript********************************** -->
+<script>
+/* ---------------------------------- Caixa de miniatura de imagens ---------------------------------- */
+
+document.addEventListener('DOMContentLoaded', () => {
+    let slideIndex = 0;
+    let slideTimeout;
+    const slides = document.querySelectorAll(".slides .slide");
+    const thumbnails = document.querySelectorAll(".thumbnails img");
+
+    function showSlides() {
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex - 1].style.display = "block";  
+        updateThumbnails();
+        slideTimeout = setTimeout(showSlides, 5000); // Muda a imagem a cada 5 segundos
+    }
+
+    function updateThumbnails() {
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.classList.remove('selected');
+            if (index === slideIndex - 1) {
+                thumbnail.classList.add('selected');
+            }
+        });
+    }
+
+    function handleThumbnailClick(event) {
+        const index = parseInt(event.target.getAttribute('data-index'), 10);
+        slideIndex = index - 1; // Ajusta para índice zero-baseado
+        showSlides(); // Atualiza a imagem do slider para a miniatura clicada
+        
+        // Para a transição automática atual
+        clearTimeout(slideTimeout);
+
+        // Aguarda 10 segundos antes de reiniciar a transição automática
+        setTimeout(() => {
+            slideTimeout = setTimeout(showSlides, 5000); // Muda a imagem a cada 5 segundos
+        }, 10000); // Pausa por 10 segundos após a seleção da miniatura
+    }
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', handleThumbnailClick);
+    });
+
+    showSlides(); // Inicializa o slider
+});
+
+
+
+</script>
+
+</body>
+</html>

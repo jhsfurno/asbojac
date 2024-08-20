@@ -1,0 +1,425 @@
+/* ---------------------------------- Desenvolvendo Estilos básicos ---------------------------------- */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #008000; /* Verde representando a cor tradicional do gramado */
+    color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Navegação */
+nav {
+    background-color: #004d00; /* Verde escuro */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Seção principal */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+main h2 {
+    color: #008000;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+main p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Estilos para seções especiais */
+.section-highlight {
+    background-color: #e0ffe0; /* Verde claro */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.section-highlight h3 {
+    color: #004d00;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #004d00;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    main h2 {
+        font-size: 1.8em;
+    }
+}
+
+
+
+/* Exemplo de cores definidas */
+:root {
+    --cor-primaria: #91dfc5; /* Cor principal do botão */
+    --cor-secundaria: #2ecc71; /* Cor de destaque */
+    --cor-fundo: #ecf0f1; /* Cor de fundo */
+    --cor-texto: #0e0404; /* Cor do texto */
+}
+
+/* Estilo para o botão */
+button {
+    background-color: var(--cor-primaria); /* Cor de fundo do botão */
+    color: var(--cor-texto); /* Cor do texto do botão */
+    border: none; /* Remove a borda padrão */
+    padding: 10px 20px; /* Adiciona preenchimento ao botão */
+    border-radius: 5px; /* Cantos arredondados */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+button:hover {
+    background-color: var(--cor-secundaria); /* Cor de fundo ao passar o mouse */
+}
+
+/* styles.css */
+
+/* Estilo para a barra de navegação */
+.navbar {
+    background-color: #004d00; /* Cor de fundo da barra de navegação * 3498db/
+    padding: 10px 0; /* Espaçamento interno */
+}
+
+.nav-menu {
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centraliza o conteúdo da barra de navegação */
+}
+
+.nav-menu li {
+    display: inline; /* Exibe os itens da lista na horizontal */
+}
+
+.nav-menu a {
+    color: #ffffff; /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    padding: 10px 20px; /* Espaçamento interno dos links */
+    display: inline-block; /* Permite o padding e o background-color */
+    border-radius: 5px; /* Cantos arredondados dos links */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+.nav-menu a:hover {
+    background-color: #2980b9; /* Cor de fundo ao passar o mouse *  #2980b9;/
+}
+
+.nav-menu a.active {
+    background-color: #2ecc71; /* Cor de fundo para o link ativo */
+    color: #ffffff; /* Cor do texto do link ativo */
+}
+
+.map-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente (se necessário) */
+    margin: 0 auto;          /* Garante que a div esteja centralizada na página */
+    width: 100%;             /* A largura máxima da div */
+}
+
+.map-container iframe {
+    max-width: 100%;         /* Garante que o iframe não ultrapasse a largura da página */
+   /* height: auto;            /* Mantém a proporção correta do iframe */
+}
+
+/* ---------------------------------- Desenvolvendo o SLIDER ---------------------------------- */
+/* Container do slider */
+
+.slider {
+    position: relative;
+    width: 50%; /* Ou uma largura fixa, se necessário */
+    max-width: 1000px; /* Ajuste conforme necessário */
+    margin: 0 auto; /* Centraliza o slider horizontalmente */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse o contêiner */
+}
+
+
+/* ---------------------------------- Estilo para cada slide ---------------------------------- */
+.slides .slide {
+    display: none;
+}
+
+/* ---------------------------------- Estilo para as imagens ---------------------------------- */
+
+.slider img {
+    width: 100%; /* Garante que as imagens ocupem toda a largura do contêiner */
+    height: 100%; /* Mantém a proporção das imagens */
+    display: block; /* Remove o espaço em branco abaixo das imagens */
+}
+
+.slider .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Adicione esta linha */
+}
+
+.slider .slide img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* ---------------------------------- Mostrar o primeiro slide ---------------------------------- */
+.slides .slide:first-child {
+    display: block;
+}
+
+/* ---------------------------------- Botões de navegação (setas) ---------------------------------- */
+
+.slider .prev, .slider .next {
+    position: absolute;
+    top: 50%;
+    width: 40px; /* Ajuste conforme necessário */
+    height: 40px; /* Ajuste conforme necessário */
+    background-color: rgba(91, 102, 81, 0.7); /* Cor de fundo com transparência */
+    color: white; /* Cor dos ícones */
+    border: none;
+    border-radius: 50%; /* Torna o botão circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 10; /* Garante que os botões estejam acima das imagens */
+    font-size: 20px; /* Ajuste o tamanho do ícone conforme necessário */
+}
+
+.slider .prev:hover, .slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.9); /* Escurece o fundo ao passar o mouse */
+    transform: translateY(-50%) scale(1.1); /* Aumenta o tamanho do botão ao passar o mouse */
+   /* transition: background-color 0.3s ease, transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+
+.slider .prev {
+    left: 10px; /* Ajuste a distância do lado esquerdo */
+}
+
+.slider .next {
+    right: 10px; /* Ajuste a distância do lado direito */
+}
+
+/* ---------------------------------- Caixa de miniatura de imagens ---------------------------------- */
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.thumbnails img {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+}
+
+.thumbnails img:hover {
+    border: 2px solid #000;
+}
+
+/* Adiciona uma borda para a miniatura selecionada */
+.thumbnails img.selected {
+    border: 2px solid #000;
+}
+
+.nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.nav-buttons .prev, .nav-buttons .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+/* ---------------------------------- Efeitos de sombreamento no slider ---------------------------------- */
+
+.fade {
+    animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* ---------------------------------- Efeitos de slide no slider ---------------------------------- */
+
+.slide {
+    animation: slideEffect 1.5s ease-in-out;
+}
+
+@keyframes slideEffect {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* ---------------------------------- Efeitos de zoom no slider ---------------------------------- */
+
+.zoom {
+    animation: zoomEffect 1.5s ease-in-out;
+}
+
+@keyframes zoomEffect {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+}
+
+/* ---------------------------------- Efeitos de rotate no slider ---------------------------------- */
+
+.rotate {
+    animation: rotateEffect 1.5s ease-in-out;
+}
+
+@keyframes rotateEffect {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ---------------------------------- Efeitos de flip no slider ---------------------------------- */
+
+.flip {
+    animation: flipEffect 1.5s ease-in-out;
+    backface-visibility: hidden;
+}
+
+@keyframes flipEffect {
+    from { transform: rotateY(0); }
+    to { transform: rotateY(180deg); }
+}
+
+/* ---------------------------------- Efeitos de desintegrate no slider ---------------------------------- */ 
+
+.disintegrate {
+    animation: disintegrate 1.5s ease-in-out;
+    position: relative;
+}
+
+@keyframes disintegrate {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(-10px);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+        clip-path: polygon(10% 10%, 90% 0%, 100% 100%, 0% 90%);
+    }
+}
+
+/* ---------------------------------- Efeitos de blur no slider ---------------------------------- */
+
+.blur {
+    animation: blurEffect 1.5s ease-in-out;
+}
+
+@keyframes blurEffect {
+    from { filter: blur(0px); }
+    to { filter: blur(5px); opacity: 0; }
+}
+
+/* ---------------------------------- Efeitos de curtain reveal no slider ---------------------------------- */
+
+.curtain {
+    animation: curtainEffect 1.5s ease-in-out;
+    transform-origin: top;
+}
+
+@keyframes curtainEffect {
+    from { transform: scaleY(0); }
+    to { transform: scaleY(1); }
+}
+
+/* ---------------------------------- Efeitos de slice no slider ---------------------------------- */
+
+.slice {
+    animation: sliceEffect 1.5s ease-in-out;
+}
+
+@keyframes sliceEffect {
+    from { clip-path: inset(0% 0% 0% 100%); }
+    to { clip-path: inset(0% 0% 0% 0%); }
+}
